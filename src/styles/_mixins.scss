@@ -1,0 +1,8 @@
+@mixin container {
+  width: min(var(--container-max), calc(100% - var(--gutter) * 2));
+  margin: 0 auto;
+}
+
+@mixin section-spacing {
+  padding: clamp(56px, 8vw, 108px) 0;
+}
