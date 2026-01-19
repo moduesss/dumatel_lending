@@ -106,22 +106,23 @@ export default function PricingPlans() {
               </div>
             </div>
 
-            <div className="pricing-plans__cards">
-              <article className="plan-card plan-card--free">
-                <div className="plan-card__header">
+            <div className={styles["pricing-plans__cards"]}>
+              <article className={styles["plan-card"]}>
+                <div className={styles["plan-card__header"]}>
                   <h3>Бесплатный</h3>
-                  <span className="plan-card__pill">1 чел.</span>
+                  <span className={styles["plan-card__pill"]}>1 чел.</span>
                 </div>
 
-                <div className="plan-card__intro">
+                <div className={styles["plan-card__intro"]}>
                   <p>
-                    <span className="plan-card__arrow">→</span> Повысьте
+                    <span className={styles["plan-card__arrow"]}>→</span>{" "}
+                    Повысьте
                     эффективность с базовым доступом и попробуйте всю полноту
                     функционала Думателя.
                   </p>
                 </div>
 
-                <ul className="plan-card__features">
+                <ul className={styles["plan-card__features"]}>
                   {freeFeatures.map((feature) => (
                     <li key={feature}>
                       <Image
@@ -135,31 +136,40 @@ export default function PricingPlans() {
                   ))}
                 </ul>
 
-                <div className="plan-card__footer">
-                  <p className="plan-card__notice">Ограниченный функционал</p>
-                  <a className="plan-card__cta plan-card__cta--dark" href="https://app.dumatel.ru/">
+                <div className={styles["plan-card__footer"]}>
+                  <p className={styles["plan-card__notice"]}>
+                    Ограниченный функционал
+                  </p>
+                  <a
+                    className={[
+                      styles["plan-card__cta"],
+                      styles["plan-card__cta--dark"],
+                    ].join(" ")}
+                    href="https://app.dumatel.ru/"
+                  >
                     Попробовать бесплатно
                   </a>
                 </div>
               </article>
 
-              <article className="plan-card plan-card--pro">
-                <div className="plan-card__header">
-                  <div className="plan-card__title">
-                    <span className="plan-card__badge">PRO</span>
+              <article className={styles["plan-card"]}>
+                <div className={styles["plan-card__header"]}>
+                  <div className={styles["plan-card__title"]}>
+                    <span className={styles["plan-card__badge"]}>PRO</span>
                     <h3>Профи</h3>
                   </div>
-                  <span className="plan-card__pill">1 чел.</span>
+                  <span className={styles["plan-card__pill"]}>1 чел.</span>
                 </div>
 
-                <div className="plan-card__intro">
+                <div className={styles["plan-card__intro"]}>
                   <p>
-                    <span className="plan-card__arrow">→</span> Раскройте полные
+                    <span className={styles["plan-card__arrow"]}>→</span>{" "}
+                    Раскройте полные
                     возможности Думателя с расширенными функциями.
                   </p>
                 </div>
 
-                <ul className="plan-card__features">
+                <ul className={styles["plan-card__features"]}>
                   {proFeatures.map((feature) => (
                     <li key={feature}>
                       <Image
@@ -173,19 +183,27 @@ export default function PricingPlans() {
                   ))}
                 </ul>
 
-                <div className="plan-card__footer">
-                  <div className="plan-card__price">
-                    <span className="plan-card__sale">
-                      <span className="plan-card__sale-accent">-30%</span> на год
+                <div className={styles["plan-card__footer"]}>
+                  <div className={styles["plan-card__price"]}>
+                    <span className={styles["plan-card__sale"]}>
+                      <span className={styles["plan-card__sale-accent"]}>
+                        -30%
+                      </span>{" "}
+                      на год
                     </span>
-                    <div className="plan-card__amount">
-                      <span className="plan-card__old">2590 ₽</span>
-                      <span className="plan-card__current">1 900 ₽</span>
+                    <div className={styles["plan-card__amount"]}>
+                      <span className={styles["plan-card__old"]}>2590 ₽</span>
+                      <span className={styles["plan-card__current"]}>
+                        1 900 ₽
+                      </span>
                     </div>
                   </div>
 
                   <a
-                    className="plan-card__cta plan-card__cta--accent"
+                    className={[
+                      styles["plan-card__cta"],
+                      styles["plan-card__cta--accent"],
+                    ].join(" ")}
                     href="https://app.dumatel.ru/"
                   >
                     Подключиться сейчас
@@ -194,11 +212,14 @@ export default function PricingPlans() {
               </article>
             </div>
 
-            <div className="pricing-plans__home-indicator" aria-hidden="true" />
+            <div
+              className={styles["pricing-plans__home-indicator"]}
+              aria-hidden="true"
+            />
           </div>
         </div>
 
-        <p className="pricing-plans__note">
+        <p className={styles["pricing-plans__note"]}>
           Внимание: При выборе любого из тарифов, за исключением бесплатного, вы
           соглашаетесь с офертой и пользовательским соглашением.
         </p>
