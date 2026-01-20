@@ -41,7 +41,7 @@ export default function Hero() {
           playsInline
           preload="metadata"
           aria-hidden="true"
-          poster="public/images/hero-poster.webp"
+          poster={withBasePath("/images/hero-poster.jpg")}
         />
         <div className={styles["hero__overlay"]} />
       </div>

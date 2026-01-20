@@ -70,13 +70,13 @@ const slides = [
 ];
 
 const fileIcons = [
-  { src: "/icons/pdf-file.svg", label: "PDF" },
-  { src: "/icons/doc-file.svg", label: "DOC" },
-  { src: "/icons/xls-file.svg", label: "XLS" },
-  { src: "/icons/pptx-file.svg", label: "PPTX" },
-  { src: "/icons/video-file.svg", label: "Video" },
-  { src: "/icons/audio-file.svg", label: "Audio" },
-  { src: "/icons/image-file.svg", label: "Image" },
+  { src: withBasePath("/icons/pdf-file.svg"), label: "PDF" },
+  { src: withBasePath("/icons/doc-file.svg"), label: "DOC" },
+  { src: withBasePath("/icons/xls-file.svg"), label: "XLS" },
+  { src: withBasePath("/icons/pptx-file.svg"), label: "PPTX" },
+  { src: withBasePath("/icons/video-file.svg"), label: "Video" },
+  { src: withBasePath("/icons/audio-file.svg"), label: "Audio" },
+  { src: withBasePath("/icons/image-file.svg"), label: "Image" },
 ];
 
 export default function AssistantCarousel() {

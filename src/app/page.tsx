@@ -20,8 +20,8 @@ export default function HomePage() {
         <Hero />
         <AssistantCarousel />
         <AssistantDialog />
-        <Reviews />
         <Scenarios />
+        <Reviews />
         <PricingPlans />
         <Formats />
         <ComparisonMatrix />
