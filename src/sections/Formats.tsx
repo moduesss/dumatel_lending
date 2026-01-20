@@ -17,9 +17,9 @@ const onPremPoints = [
 ];
 
 export default function Formats() {
-  const sectionStyle: CSSProperties = {
+  const sectionStyle = {
     "--formats-dots-url": `url(${withBasePath("/icons/formats-dots.svg")})`,
-  };
+  } as CSSProperties;
 
   return (
     <section

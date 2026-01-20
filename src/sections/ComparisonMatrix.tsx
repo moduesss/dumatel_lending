@@ -84,9 +84,9 @@ const rows: Array<{
 ];
 
 export default function ComparisonMatrix() {
-  const sectionStyle: CSSProperties = {
+  const sectionStyle = {
     "--comparison-icons": `url(${withBasePath("/icons/comparison-icons.svg")})`,
-  };
+  } as CSSProperties;
 
   return (
     <section

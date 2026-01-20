@@ -31,9 +31,9 @@ const items = [
 ];
 
 export default function SecurityShowcase() {
-  const sectionStyle: CSSProperties = {
+  const sectionStyle = {
     "--security-dots-url": `url(${withBasePath("/icons/formats-dots.svg")})`,
-  };
+  } as CSSProperties;
 
   return (
     <section
