@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
 import { useEffect, useRef, useState } from "react";
+import Button from "@/components/Button";
 import styles from "./AssistantCarousel.module.scss";
-
-const SLIDE_GAP = 100;
 
 const slides = [
   {
@@ -82,26 +81,49 @@ const fileIcons = [
 
 export default function AssistantCarousel() {
   const slideRef = useRef<HTMLDivElement | null>(null);
-  const [cardWidth, setCardWidth] = useState(0);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
+  const [slideStride, setSlideStride] = useState(0);
+  const [centerOffset, setCenterOffset] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
     const updateWidth = () => {
-      if (!slideRef.current) {
+      if (!slideRef.current || !trackRef.current) {
         return;
       }
-      setCardWidth(slideRef.current.getBoundingClientRect().width);
+      const cardRect = slideRef.current.getBoundingClientRect();
+      const gapValue = parseFloat(
+        getComputedStyle(trackRef.current).columnGap || "0"
+      );
+      const viewportRect = viewportRef.current?.getBoundingClientRect();
+      const safeGap = Number.isFinite(gapValue) ? gapValue : 0;
+      setSlideStride(cardRect.width + safeGap);
+      if (viewportRect) {
+        setCenterOffset(
+          Math.max(0, (viewportRect.width - cardRect.width) / 2)
+        );
+      } else {
+        setCenterOffset(0);
+      }
     };
 
     updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(slideRef.current);
+    if (trackRef.current) {
+      observer.observe(trackRef.current);
+    }
+    if (viewportRef.current) {
+      observer.observe(viewportRef.current);
+    }
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (!cardWidth) {
+    if (!slideStride) {
       return;
     }
 
@@ -110,19 +132,19 @@ export default function AssistantCarousel() {
     }, 31000);
 
     return () => window.clearInterval(interval);
-  }, [cardWidth]);
+  }, [slideStride]);
 
-    useEffect(() => {
-      videoRefs.current.forEach((v, i) => {
-        if (!v) return;
-        if (i === activeIndex) {
-          v.currentTime = 0;
-          v.play().catch(() => {});
-        } else {
-          v.pause();
-        }
-      });
-    }, [activeIndex]);
+  useEffect(() => {
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === activeIndex) {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, [activeIndex]);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -132,7 +154,7 @@ export default function AssistantCarousel() {
     setActiveIndex((prev) => (prev + 1) % slides.length);
   };
 
-  const offset = cardWidth ? -(cardWidth + SLIDE_GAP) * activeIndex : 0;
+  const offset = slideStride ? -(slideStride * activeIndex) + centerOffset : 0;
 
   return (
     <section
@@ -152,9 +174,10 @@ export default function AssistantCarousel() {
         </div>
 
         <div className={styles["assistant-carousel__controls"]}>
-          <button
-            className={styles["assistant-carousel__arrow"]}
+          <Button
             type="button"
+            variant="ghost"
+            size="icon"
             onClick={handlePrev}
             aria-label="Предыдущий слайд"
           >
@@ -164,10 +187,11 @@ export default function AssistantCarousel() {
               width={48}
               height={48}
             />
-          </button>
-          <button
-            className={styles["assistant-carousel__arrow"]}
+          </Button>
+          <Button
             type="button"
+            variant="ghost"
+            size="icon"
             onClick={handleNext}
             aria-label="Следующий слайд"
           >
@@ -177,13 +201,17 @@ export default function AssistantCarousel() {
               width={48}
               height={48}
             />
-          </button>
+          </Button>
         </div>
 
-        <div className={styles["assistant-carousel__viewport"]}>
+        <div
+          className={styles["assistant-carousel__viewport"]}
+          ref={viewportRef}
+        >
           <div
             className={styles["assistant-carousel__track"]}
             style={{ transform: `translateX(${offset}px)` }}
+            ref={trackRef}
           >
             {slides.map((slide, index) => (
               <article

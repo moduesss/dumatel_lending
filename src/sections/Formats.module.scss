@@ -33,8 +33,10 @@
 }
 
 .formats__card {
-  width: min(520px, 100%);
-  height: max-content;
+  width: 100%;
+  max-width: 520px;
+  flex: 1 1 0;
+  min-width: 0;
   background: #ffffff;
   border-radius: var(--radius-4);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
@@ -113,15 +115,15 @@
   z-index: 1;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .formats__cards {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .formats__card {
-    width: min(570px, 100%);
     height: auto;
+    max-width: 100%;
   }
 }
 

@@ -48,14 +48,14 @@
   align-items: center;
 }
 
-.assistant-carousel__arrow {
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.assistant-carousel__controls button img {
+  transition: filter 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .assistant-carousel__controls button:hover img {
+    filter: brightness(0.85);
+  }
 }
 
 .assistant-carousel__viewport {

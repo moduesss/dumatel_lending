@@ -77,7 +77,6 @@
 }
 
 .question__button {
-  border: none;
   background: #ff7f30;
   color: #ffffff;
   font-size: var(--fs-2);
@@ -87,7 +86,6 @@
   border-radius: var(--radius-5);
   padding: var(--space-4) var(--space-7);
   min-width: 260px;
-  cursor: pointer;
 }
 
 .question__button:focus-visible {

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { withBasePath } from "@/lib/paths";
+import Button from "@/components/Button";
 import styles from "./FAQ.module.scss";
 
 const items = [
@@ -68,9 +69,10 @@ export default function FAQ() {
                   isOpen ? styles["faq__item--open"] : ""
                 }`}
               >
-                <button
+                <Button
                   className={styles.faq__trigger}
                   type="button"
+                  variant="ghost"
                   aria-expanded={isOpen}
                   aria-controls={contentId}
                   onClick={() =>
@@ -89,7 +91,7 @@ export default function FAQ() {
                     height={70}
                     aria-hidden="true"
                   />
-                </button>
+                </Button>
                 <div
                   className={styles.faq__content}
                   id={contentId}

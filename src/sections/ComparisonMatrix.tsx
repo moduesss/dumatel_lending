@@ -128,8 +128,8 @@ export default function ComparisonMatrix() {
                     <Image
                       src={withBasePath(column.icon)}
                       alt={column.alt}
-                      width={47}
-                      height={47}
+                      width={42}
+                      height={42}
                     />
                   </div>
                 ))}

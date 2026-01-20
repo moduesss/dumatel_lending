@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"; // CHANGE
 import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
+import Button from "@/components/Button";
 import styles from "./Header.module.scss";
 
 const NAV_LINKS = [
@@ -90,16 +91,18 @@ export default function Header() {
           </a>
 
           {/* CHANGE: Burger (показывается только <1440px через CSS) */}
-          <button
+          <Button
             className={styles["site-header__burger"]}
             type="button"
+            variant="ghost"
+            size="icon"
             aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={isOpen}
             aria-controls={dialogId}
             onClick={toggle}
           >
             <span className={styles["burger-lines"]} aria-hidden="true" />
-          </button>
+          </Button>
         </div>
       </header>
 
@@ -119,14 +122,16 @@ export default function Header() {
         >
           <div className={styles["mobile-menu__header"]}>
             <span className={styles["mobile-menu__title"]}>Меню</span>
-            <button
+            <Button
               className={styles["mobile-menu__close"]}
               type="button"
+              variant="ghost"
+              size="icon"
               aria-label="Закрыть меню"
               onClick={close}
             >
               ✕
-            </button>
+            </Button>
           </div>
 
           <nav className={styles["mobile-menu__nav"]} aria-label="Навигация">

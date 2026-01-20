@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
+import Button from "@/components/Button";
 import styles from "./QuestionWindow.module.scss";
 
 export default function QuestionWindow() {
@@ -35,9 +36,13 @@ export default function QuestionWindow() {
                 К примеру: Дай найти формулы для решения теории в конспекте.
               </p>
             </div>
-            <button className={styles.question__button} type="button">
+            <Button
+              className={styles.question__button}
+              type="button"
+              variant="primary"
+            >
               Узнать ответ
-            </button>
+            </Button>
           </div>
         </div>
       </div>

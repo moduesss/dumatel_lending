@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
+import Button from "@/components/Button";
 import styles from "./PricingPlans.module.scss";
 
 const freeFeatures = [
@@ -43,25 +44,27 @@ export default function PricingPlans() {
           role="tablist"
           aria-label="Период оплаты"
         >
-          <button
+          <Button
             className={[
               styles["pricing-plans__toggle-button"],
               styles["pricing-plans__toggle-button--active"],
             ].join(" ")}
             type="button"
+            variant="ghost"
             role="tab"
             aria-selected="true"
           >
             Месячный план
-          </button>
-          <button
+          </Button>
+          <Button
             className={styles["pricing-plans__toggle-button"]}
             type="button"
+            variant="ghost"
             role="tab"
             aria-selected="false"
           >
             Годовой план -30%
-          </button>
+          </Button>
         </div>
 
         <div className={styles["pricing-plans__device"]}>

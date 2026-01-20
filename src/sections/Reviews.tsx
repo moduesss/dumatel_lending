@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { withBasePath } from "@/lib/paths";
 import { useEffect, useRef, useState } from "react";
+import Button from "@/components/Button";
 import styles from "./Reviews.module.scss";
 
 const SLIDE_GAP = 85;
@@ -180,9 +181,11 @@ export default function Reviews() {
         </div>
 
         <div className={styles["reviews__controls"]}>
-          <button
+          <Button
             className={styles["reviews__arrow"]}
             type="button"
+            variant="ghost"
+            size="icon"
             onClick={handlePrev}
             aria-label="Предыдущие отзывы"
             disabled={index === 0}
@@ -193,13 +196,15 @@ export default function Reviews() {
               width={48}
               height={48}
             />
-          </button>
+          </Button>
           <a className={styles["reviews__cta"]} href="#cta">
             Начать пользоваться Думателем
           </a>
-          <button
+          <Button
             className={styles["reviews__arrow"]}
             type="button"
+            variant="ghost"
+            size="icon"
             onClick={handleNext}
             aria-label="Следующие отзывы"
             disabled={index === maxIndex}
@@ -210,7 +215,7 @@ export default function Reviews() {
               width={48}
               height={48}
             />
-          </button>
+          </Button>
         </div>
       </div>
     </section>
