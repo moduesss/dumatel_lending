@@ -137,6 +137,7 @@ export default function AssistantCarousel() {
     <section
       className={styles["assistant-carousel"]}
       aria-labelledby="assistant-heading"
+      id="product" 
     >
       <div className={styles["assistant-carousel__inner"]}>
         <div className={styles["assistant-carousel__title"]}>

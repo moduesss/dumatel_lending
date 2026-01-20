@@ -24,7 +24,11 @@ const proFeatures = [
 
 export default function PricingPlans() {
   return (
-    <section className={styles["pricing-plans"]} aria-labelledby="pricing-title">
+    <section
+      className={styles["pricing-plans"]}
+      aria-labelledby="pricing-title"
+      id="pricing"
+    >
       <div className={styles["pricing-plans__inner"]}>
         <header className={styles["pricing-plans__heading"]}>
           <h2 id="pricing-title">

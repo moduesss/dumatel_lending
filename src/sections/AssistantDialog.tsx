@@ -6,6 +6,7 @@ export default function AssistantDialog() {
     <section
       className={styles["assistant-dialog"]}
       aria-labelledby="assistant-dialog-title"
+      id="audience"
     >
       <div className={styles["assistant-dialog__inner"]}>
         <h2 id="assistant-dialog-title" className="visually-hidden">

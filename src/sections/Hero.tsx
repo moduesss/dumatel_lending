@@ -28,7 +28,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero} id="hero" ref={rootRef}>
+    <section className={styles.hero} ref={rootRef}>
       <div className={styles["hero__background"]}>
         <Image
           src="/images/Image.png"

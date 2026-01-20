@@ -16,7 +16,7 @@ const onPremPoints = [
 
 export default function Formats() {
   return (
-    <section className={styles.formats} aria-labelledby="formats-title">
+    <section className={styles.formats} aria-labelledby="formats-title" id="usage">
       <div className={styles.formats__inner}>
         <h2 id="formats-title" className={styles.formats__title}>
           Форматы использования Думателя
