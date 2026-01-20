@@ -32,13 +32,16 @@ export default function Hero() {
   return (
     <section className={styles.hero} ref={rootRef}>
       <div className={styles["hero__background"]}>
-        <Image
-          src={withBasePath("/images/Image.png")}
-          alt="Команда работает с документами"
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
+        <video
+          className={styles["hero__video"]}
+          src={withBasePath("/videos/hero.mov")}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          poster="public/images/hero-poster.webp"
         />
         <div className={styles["hero__overlay"]} />
       </div>

@@ -27,7 +27,7 @@
   --toggle-gap: var(--space-3);
   --toggle-padding-x: var(--space-3);
   --toggle-padding-y: var(--space-2);
-  --toggle-offset: 0px;
+  --toggle-offset: 0%;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,13 +53,11 @@
   transform: translateX(var(--toggle-offset));
   transition: transform 220ms ease;
   z-index: 0;
+  pointer-events: none;
 }
 
 .pricing-plans__toggle[data-cycle="yearly"] {
-  --toggle-offset: calc(
-    (100% - (2 * var(--toggle-padding-x)) - var(--toggle-gap)) / 2 +
-      var(--toggle-gap)
-  );
+  --toggle-offset: calc(100% + var(--toggle-gap));
 }
 
 .pricing-plans__toggle-button {

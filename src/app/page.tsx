@@ -7,6 +7,7 @@ import FAQ from "@/sections/FAQ";
 import Hero from "@/sections/Hero";
 import PricingPlans from "@/sections/PricingPlans";
 import Reviews from "@/sections/Reviews";
+import Scenarios from "@/sections/Scenarios";
 import SecurityShowcase from "@/sections/SecurityShowcase";
 import QuestionWindow from "@/sections/QuestionWindow";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <AssistantCarousel />
         <AssistantDialog />
         <Reviews />
+        <Scenarios />
         <PricingPlans />
         <Formats />
         <ComparisonMatrix />

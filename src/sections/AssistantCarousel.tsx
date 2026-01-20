@@ -9,7 +9,7 @@ import styles from "./AssistantCarousel.module.scss";
 const slides = [
   {
     id: "auto",
-    icon: "/icons/Vector.svg",
+    icon: "/icons/folder-vector.svg",
     title: "Автоматические атрефакты",
     lead: "Думатель создает готовые документы автоматически.",
     description:
@@ -18,7 +18,7 @@ const slides = [
   },
   {
     id: "web-agent",
-    icon: "/icons/Vector-1.svg",
+    icon: "/icons/power-vector.svg",
     title: "Встроенный Web-Агент",
     lead: "Думатель выходит в интернет через Web-Агента.",
     description:
@@ -27,7 +27,7 @@ const slides = [
   },
   {
     id: "knowledge-map",
-    icon: "/icons/Vector-2.svg",
+    icon: "/icons/map-vector.svg",
     title: "Карта знаний и мастер данных",
     lead: "Думатель строит интерактивные карты.",
     description:
@@ -36,7 +36,7 @@ const slides = [
   },
   {
     id: "language",
-    icon: "/icons/Vector-3.svg",
+    icon: "/icons/voice-vector.svg",
     title: "Понимание естественного языка",
     lead: "Вы можете задать думателю свой вопрос голосом или текстом.",
     description:
@@ -45,7 +45,7 @@ const slides = [
   },
   {
     id: "archive",
-    icon: "/icons/Vector-4.svg",
+    icon: "/icons/multiformat-vector.svg",
     title: "Мультиформатный архив",
     lead: "Переносите все ваши файлы, а именно:",
     description: null,
@@ -60,7 +60,7 @@ const slides = [
   },
   {
     id: "entities",
-    icon: "/icons/Vector-5.svg",
+    icon: "/icons/analyzers-vector.svg",
     title: "Извлечение и анализ сущностей",
     lead: "Думатель может извлекать нужную информацию.",
     description:
@@ -70,13 +70,13 @@ const slides = [
 ];
 
 const fileIcons = [
-  { src: "/icons/Frame 2131328722.svg", label: "PDF" },
-  { src: "/icons/Frame 2131328722-1.svg", label: "DOC" },
-  { src: "/icons/Frame 2131328722-2.svg", label: "XLS" },
-  { src: "/icons/Frame 2131328722-3.svg", label: "PPTX" },
-  { src: "/icons/VIDEO.svg", label: "Video" },
-  { src: "/icons/AUDIO.svg", label: "Audio" },
-  { src: "/icons/IMAGE.svg", label: "Image" },
+  { src: "/icons/pdf-file.svg", label: "PDF" },
+  { src: "/icons/doc-file.svg", label: "DOC" },
+  { src: "/icons/xls-file.svg", label: "XLS" },
+  { src: "/icons/pptx-file.svg", label: "PPTX" },
+  { src: "/icons/video-file.svg", label: "Video" },
+  { src: "/icons/audio-file.svg", label: "Audio" },
+  { src: "/icons/image-file.svg", label: "Image" },
 ];
 
 export default function AssistantCarousel() {
