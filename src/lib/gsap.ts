@@ -28,15 +28,15 @@ export const revealOnScroll = (
 
   initGsap();
 
-  const elements =
+  const elements: Element[] =
     typeof targets === "string"
-      ? gsap.utils.toArray(targets)
+      ? (gsap.utils.toArray(targets) as Element[])
       : Array.isArray(targets)
         ? targets
         : [targets];
 
   return elements
-    .filter(Boolean)
+    .filter((element): element is Element => Boolean(element))
     .map((element) =>
       gsap.fromTo(
         element,
