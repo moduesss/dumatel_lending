@@ -900,6 +900,7 @@ export default function Scenarios() {
       aria-labelledby="scenarios-title"
       ref={rootRef}
       data-section="scenarios"
+      id="audience"
     >
       <div className={styles.scenarios__inner}>
         <header className={styles.scenarios__header}>

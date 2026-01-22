@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.scss";
+
+const siteUrl = "https://dumatel.ru";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,24 +14,51 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Думатель",
     template: "%s | Думатель",
   },
+  applicationName: "Думатель",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   description:
     "ИИ-пространство для работы с документами и знаниями. Понимает, анализирует и генерирует.",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
+    siteName: "Думатель",
     title: "Думатель",
     description:
       "ИИ-пространство для работы с документами и знаниями. Понимает, анализирует и генерирует.",
     type: "website",
+    url: siteUrl,
+    locale: "ru_RU",
+    images: [
+      {
+        url: "/images/hero-poster.webp",
+        width: 1200,
+        height: 630,
+        alt: "Думатель — ИИ-пространство для работы с документами и знаниями",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Думатель",
     description:
       "ИИ-пространство для работы с документами и знаниями. Понимает, анализирует и генерирует.",
+    images: ["/images/hero-poster.webp"],
   },
 };
 
@@ -40,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>

@@ -8,5 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
+    sitemap: "https://dumatel.ru/sitemap.xml",
+    host: "dumatel.ru",
   };
 }

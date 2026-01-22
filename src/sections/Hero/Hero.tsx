@@ -19,8 +19,22 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero} ref={rootRef} data-section="hero">
+    <section
+      className={styles.hero}
+      ref={rootRef}
+      data-section="hero"
+      id="product"
+    >
       <div className={styles["hero__background"]}>
+        <Image
+          className={styles["hero__poster"]}
+          src={withBasePath("/images/hero-poster.webp")}
+          alt=""
+          fill
+          sizes="100vw"
+          priority
+          aria-hidden="true"
+        />
         <video
           className={styles["hero__video"]}
           src={withBasePath("/videos/hero.mp4")}
