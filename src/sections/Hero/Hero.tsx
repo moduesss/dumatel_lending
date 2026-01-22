@@ -23,7 +23,7 @@ export default function Hero() {
       <div className={styles["hero__background"]}>
         <video
           className={styles["hero__video"]}
-          src={withBasePath("/videos/hero.mov")}
+          src={withBasePath("/videos/hero.mp4")}
           autoPlay
           loop
           muted

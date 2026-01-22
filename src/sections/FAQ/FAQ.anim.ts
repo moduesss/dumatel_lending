@@ -95,11 +95,15 @@ export function animateFaqAccordion(
       return;
     }
 
+    const currentHeight = content.offsetHeight;
+
     gsap.to(content, {
       height: 0,
       autoAlpha: 0,
+      startAt: { height: currentHeight },
       duration: 0.25,
       ease: "power2.out",
+      onComplete: () => gsap.set(content, { height: 0 }),
     });
 
     if (icon) {
@@ -134,14 +138,17 @@ export function animateFaqAccordion(
       return;
     }
 
+    const targetHeight = content.scrollHeight;
+
     gsap.fromTo(
       content,
       { height: 0, autoAlpha: 0 },
       {
-        height: "auto",
+        height: targetHeight,
         autoAlpha: 1,
         duration: 0.35,
         ease: "power2.out",
+        onComplete: () => gsap.set(content, { height: "auto" }),
       }
     );
 
