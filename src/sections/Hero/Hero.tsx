@@ -25,28 +25,28 @@ export default function Hero() {
       data-section="hero"
       id="product"
     >
-      <div className={styles["hero__background"]}>
+      <div className={styles["hero__background"]} aria-hidden="true">
         <Image
-          className={styles["hero__poster"]}
-          src={withBasePath("/images/hero-poster.webp")}
+          className={[styles["hero__pattern"], styles["hero__pattern--left"]].join(
+            " "
+          )}
+          src={withBasePath("/f3c5950a5039b51fd7546283cfd49a3526499f13.svg")}
           alt=""
-          fill
-          sizes="100vw"
+          width={739}
+          height={731}
           priority
-          aria-hidden="true"
         />
-        <video
-          className={styles["hero__video"]}
-          src={withBasePath("/videos/hero.mp4")}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          aria-hidden="true"
-          poster={withBasePath("/images/hero-poster.jpg")}
+        <Image
+          className={[
+            styles["hero__pattern"],
+            styles["hero__pattern--right"],
+          ].join(" ")}
+          src={withBasePath("/d87d5e55f1915d1a355f7b3d9c20a5a1c77061c7.svg")}
+          alt=""
+          width={739}
+          height={731}
+          priority
         />
-        <div className={styles["hero__overlay"]} />
       </div>
 
       <div className={styles["hero__content"]} data-reveal>
@@ -54,12 +54,11 @@ export default function Hero() {
           Понимает. Анализирует. Генерирует.
         </p>
         <h1 className={styles["hero__title"]} data-anim="hero-title">
-          ИИ-пространство <em>для работы</em>
-          <br />
-          с документами и знаниями
+          Ваш <em>ИИ-помощник</em> для работы
+          <br />с большим объёмом задач и документов
         </h1>
         <p className={styles["hero__subtitle"]} data-anim="hero-subtitle">
-          Всё, чтобы понимать, искать и создавать быстрее.
+          Делает за минуты то, на что раньше уходили дни и недели.
         </p>
       </div>
 
@@ -76,7 +75,9 @@ export default function Hero() {
               styles["hero__dialog-icon"],
               styles["hero__dialog-icon--left"],
             ].join(" ")}
-            src={withBasePath("/icons/Dialog 8.svg")}
+            src={withBasePath(
+              "/2562bb089dfb5d160f95eb654a94056d37e205b9.svg"
+            )}
             alt="Иконка диалога"
             width={48}
             height={48}
@@ -119,7 +120,9 @@ export default function Hero() {
               styles["hero__dialog-icon"],
               styles["hero__dialog-icon--right"],
             ].join(" ")}
-            src={withBasePath("/icons/Dialog 7.svg")}
+            src={withBasePath(
+              "/40bcf6adb0f0dbd0ced2b8c8543fcc1ce8f79dbd.svg"
+            )}
             alt="Иконка диалога"
             width={48}
             height={48}
@@ -128,8 +131,13 @@ export default function Hero() {
       </div>
 
       <div className={styles["hero__cta"]} data-anim="hero-cta">
-        <Button variant="primary" size="lg" href="https://app.dumatel.ru/">
-          Попробовать Думатель бесплатно
+        <Button
+          className={styles["hero__cta-button"]}
+          variant="primary"
+          size="lg"
+          href="https://app.dumatel.ru/"
+        >
+          Попробовать работать с Думателем
         </Button>
       </div>
     </section>
